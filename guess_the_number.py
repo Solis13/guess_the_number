@@ -28,9 +28,10 @@ def get_guess():
         except ValueError:
     #         if there is no number, the line with int() raises a
     #         ValueError and this block of code runs
-            print('That was not an integer number. Try again.')
+           print('That was not an integer number. Try again.')
     # since it's a while True loop, it will repeat and ask the user again.
-    print(f'The number you entered was {number}')
+        print(f'The number you entered was {number}')
+     
 def check_guess(guess, secret):
     """ compare guess and secret, return string describing result of comparison """
     if guess == secret:
@@ -45,9 +46,11 @@ def main():
 
     (low, high) = configure_range()
     secret = generate_secret(low, high)
+    guess_count = 0 # counter variable
 
     while True:
         guess = get_guess()
+        guess_count +=1 # adding counter varible
         result = check_guess(guess, secret)
         print(result)
 
